@@ -1,0 +1,11 @@
+:root {
+    --red: #E33011;
+    --orange: #FC6D00;
+    --gray: #595C55;
+    --brown: #513A3A;
+    --burgundy: #7D2519;
+}
+
+body {
+    box-sizing: border-box;
+}
