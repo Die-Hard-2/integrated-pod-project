@@ -27,10 +27,20 @@ body {
     font-size: 10rem;
 }
 
+img{
+    height: 3em;
+    width: 5em;
+}
+
 #option-buttons{
 
 }
 
 #option-buttons2{
 
+}
+
+.row {
+    display: flex;
+    justify-content: center;
 }
