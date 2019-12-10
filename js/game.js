@@ -7,7 +7,7 @@ let state = {
 }
 
 function startGame() {
-    state = {};
+    state = { medPack: false };
     showTextNode(1);
 }
 
@@ -60,13 +60,28 @@ const textNodes = [
         options: [
             {
                 text: "Option 1",
+                nextText: 3
             },
             {
                 text: "Option 2",
+                nextText: 4
+            }
+        ]
+    },
+    {
+        id: 3,
+        text: "This should be the third event",
+        options: [
+            {
+                text: "Option 1",
+                nextText: 4
+            },
+            {
+                text: "Option 2",
+                nextText: 4
             }
         ]
     }
-
 ];
 
 startGame();
