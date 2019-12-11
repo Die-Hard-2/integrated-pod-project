@@ -16,7 +16,7 @@ body {
     align-items: center;
     font-family: var(--headerFont);
     color: white;
-    font-size: 3rem;
+    font-size: 1.5rem;
     text-shadow: 1px 1px var(--red) ;
 }
 
@@ -27,9 +27,9 @@ body {
     font-size: 10rem;
 }
 
-img{
-    height: 3em;
-    width: 5em;
+img{ /*edited to account for change in font size that affected img size; scales with breakpoints*/
+    height: 15rem;
+    width: 30rem;
 }
 
 #option-buttons{
