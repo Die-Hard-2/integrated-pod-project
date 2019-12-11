@@ -12,6 +12,7 @@ body {
     box-sizing: border-box;
     background: black;
     display: flex;
+    text-align: center;
     flex-direction: column;
     align-items: center;
     font-family: var(--headerFont);
@@ -33,13 +34,14 @@ img{ /*edited to account for change in font size that affected img size; scales 
 }
 
 #option-buttons{
-    background: white;
-    color: black;
-    justify-content: space-between;
+    background: black;
 }
 
-#option-buttons2{
-
+.btn{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 .row {
