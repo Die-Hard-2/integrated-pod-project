@@ -16,7 +16,7 @@ body {
     align-items: center;
     font-family: var(--headerFont);
     color: white;
-    font-size: 5rem;
+    font-size: 3rem;
     text-shadow: 1px 1px var(--red) ;
 }
 
@@ -35,6 +35,7 @@ img{
 #option-buttons{
     background: white;
     color: black;
+    justify-content: space-between;
 }
 
 #option-buttons2{
