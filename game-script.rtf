@@ -157,7 +157,9 @@ OPTION 2: \'93Hey you, open the door. Urgent police business\'94 // chance encou
 \f3\b0 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
-\f0\i0 \cf3 // if we wanted to incorporate a \'93chance\'94 or \'93roll\'94 function, this would be a good place to do so. Example: If random number is between 1-5, repeat negotiation. Else, random number 6-10 can proceed.\
+\f0\i0 \cf3 // if we wanted to incorporate a \'93chance\'94 or \'93roll\'94 function, this would be a good place to do so. Example: If \cf8 random number is between 1-5\cf3 , 
+\f1\b \cf8 GAME OVER
+\f0\b0 \cf3  and repeat negotiation. Else, \cf5 random number 6-10 can proceed\cf3 .\
 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
@@ -167,10 +169,18 @@ OPTION 2: \'93Hey you, open the door. Urgent police business\'94 // chance encou
 \f0\b0 \cf3 OPTION 1: [chance] Try to convince him to let you in\
 \cf8 OPTION 2: Find another way in // there is no other way in, terrorists get away\
 \
-\'93Forget it, I don\'92t have time to argue with you\'94 you spit before looking for another way in. You run through the crowd to search for another entrance, but can\'92t find one. [Create scenario that results in] 
-\f1\b GAME OVER loop back to CHOICE 5
+
+\f1\b IF OPTION 2 \ul OR\ulnone  CHANCE 1-5, DISPLAY:
+\f0\b0  \'93Forget it, I don\'92t have time to argue with you\'94 you spit before looking for another way in. You run through the crowd to search for another entrance, but can\'92t find one. [Create scenario that results in] 
+\f1\b GAME OVER loop back to CHOICE 5\
+\
+\cf5 IF [chance] between 6-10 \cf5 \ul \ulc5 OR\cf5 \ulnone  CHOICE 5 OPTION 1\cf7 , \cf5 DISPLAY\cf7 :\cf8 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
 \f3\i\b0 \cf3 \
 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
 \f0\i0 \cf5 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
