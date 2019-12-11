@@ -63,6 +63,14 @@ const textNodes = [
             {
                 text: "Option 2",
                 nextText: 2
+            },
+            {
+                text: "Option 3",
+                nextText: 2
+            },
+            {
+                text: "Option 4",
+                nextText: 2
             }
         ]
     },
@@ -76,7 +84,7 @@ const textNodes = [
             },
             {
                 text: "Option 2",
-                nextText: 4
+                nextText: 3
             }
         ]
     },
@@ -91,6 +99,20 @@ const textNodes = [
             {
                 text: "Option 2",
                 nextText: 4
+            }
+        ]
+    },
+    {
+        id: 4,
+        text: "This should be the fourth event",
+        options: [
+            {
+                text: "Option 1",
+                nextText: 5
+            },
+            {
+                text: "Option 2",
+                nextText: 5
             }
         ]
     }
