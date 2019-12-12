@@ -4,8 +4,7 @@ const optionButtonsElement = document.getElementById("option-buttons");
 
 //Working on this not ready
 let state = {
-
-
+    medPack: false,
 }
 
 //Starts game and immediately picks textNodes object with ID of 1
@@ -40,12 +39,13 @@ function showTextNode(textNodeIndex) {
 
 //This will eventually show options based on State. Exe: Will show an option only if state { medkit: true }
 function showOption(option) {
-    return true;
+    return option.requiredState == null || option.requiredState(state);
 }
 
 //When the event listener hears a click it launches the next textNode
 function selectOption(option) {
     const nextTextNodeId = option.nextText;
+    state = Object.assign(state, option.setState);
     showTextNode(nextTextNodeId);
 }
 
@@ -56,7 +56,7 @@ const textNodes = [
         text: "This should be the first text event",
         options: [
             {
-                text: "Option 1",
+                text: "Grab the medPack",
                 setState: { medPack: true },
                 nextText: 2
             },
@@ -79,8 +79,9 @@ const textNodes = [
         text: "This should be the second text event",
         options: [
             {
-                text: "Option 1",
-                nextText: 3
+                text: "This option should require a state of medPack: true to be True to show up",
+                nextText: 3,
+                requiredState: (currentState) => currentState.medPack
             },
             {
                 text: "Option 2",
