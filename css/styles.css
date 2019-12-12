@@ -54,3 +54,8 @@ img { /*edited to account for change in font size that affected img size; scales
     display: flex;
     justify-content: center;
 }
+
+.row-text {
+    height: 5em;
+    margin-top: 1.1em;
+}
