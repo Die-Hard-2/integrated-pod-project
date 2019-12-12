@@ -26,10 +26,10 @@ body {
     font-family: var(--headerFont);
     color: var(--red);
     text-shadow: 1px 1px white;
-    font-size: 10rem;
+    font-size: 7rem;
 }
 
-img{ /*edited to account for change in font size that affected img size; scales with breakpoints*/
+img { /*edited to account for change in font size that affected img size; scales with breakpoints*/
     height: 15rem;
     width: 30rem;
 }
