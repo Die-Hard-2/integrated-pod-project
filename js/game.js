@@ -77,9 +77,6 @@ const textNodes = [
                 nextText: 4
             },
         ]
-<<<<<<< Updated upstream
-    }
-=======
     },
     {
         id: 4, //choice 1, has impact after choice 4 option 1
@@ -170,7 +167,6 @@ const textNodes = [
             },
         ]
     },
->>>>>>> Stashed changes
 ];
 
 startGame();
