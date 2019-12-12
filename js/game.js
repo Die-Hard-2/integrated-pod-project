@@ -44,12 +44,20 @@ const textNodes = [
         text: "This should be the first text event",
         options: [
             {
-                text: "Option 1",
+                text: "Grab the medPack",
                 setState: { medPack: true },
                 nextText: 2
             },
             {
                 text: "Option 2",
+                nextText: 2
+            },
+            {
+                text: "Option 3",
+                nextText: 2
+            },
+            {
+                text: "Option 4",
                 nextText: 2
             }
         ]
@@ -59,12 +67,13 @@ const textNodes = [
         text: "This should be the second text event",
         options: [
             {
-                text: "Option 1",
-                nextText: 3
+                text: "This option should require a state of medPack: true to be True to show up",
+                nextText: 3,
+                requiredState: (currentState) => currentState.medPack
             },
             {
                 text: "Option 2",
-                nextText: 4
+                nextText: 3
             }
         ]
     },
@@ -164,6 +173,26 @@ const textNodes = [
             {
                 text: "Head to the nearest pay phone to call the number.",
                 nextText: 13
+            },
+        ]
+    },
+    {
+        id: 12, // GAME OVER scenario
+        text: "You ignore the pager. The impound cop and the tow truck are gone. You decide to wait in the terminal for Holly. You hear loud bangs from the other side of the airport...",
+        options: [
+            {
+                text: "GAME OVER. Click to try again.",
+                nextText: 11
+            },
+        ]
+    },
+    {
+        id: 13, // choice 3, first diverging plot point
+        text: "You call the number from your pager. It’s Holly calling from the plane via airphone. She lets you know that she’ll land 30 minutes later than expected.",
+        options: [
+            {
+                text: "Next",
+                nextText: 14
             },
         ]
     },
