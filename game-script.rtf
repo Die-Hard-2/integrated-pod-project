@@ -2,28 +2,41 @@
 {\fonttbl\f0\fmodern\fcharset0 CourierNewPSMT;\f1\fmodern\fcharset0 CourierNewPS-BoldMT;\f2\fmodern\fcharset0 CourierNewPS-BoldItalicMT;
 \f3\fmodern\fcharset0 CourierNewPS-ItalicMT;}
 {\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red0\green0\blue0;\red251\green0\blue7;
-\red35\green255\blue6;\red255\green255\blue11;\red0\green0\blue0;\red251\green0\blue7;}
+\red35\green255\blue6;\red255\green255\blue11;}
 {\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\cssrgb\c0\c1\c1;\cssrgb\c100000\c12195\c0;
-\cssrgb\c0\c100000\c0;\cssrgb\c100000\c100000\c0;\cssrgb\c0\c1\c1;\cssrgb\c100000\c12195\c0;}
+\cssrgb\c0\c100000\c0;\cssrgb\c100000\c100000\c0;}
 \margl1440\margr1440\vieww13800\viewh17040\viewkind0
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
-\f0\fs24 \cf0 This is a draft for our recreation of the movie Die Hard 2: Die Harder as a text adventure game.\
-The game will be from the point of reference of main character JOHN MCCLANE.\
+\f0\fs24 \cf0 This is a draft for the recreation of the movie Die Hard 2: Die Harder as a text adventure game.\
+The game will be from the point of view of main character JOHN MCCLANE.\
+The \'93main path\'94 follows the movie script. Divulging scenarios were created by the developers for the purpose of this game.\
 \
 Reference screenplay obtained from http://www.dailyscript.com/scripts/Die_Hard_2.pdf\
 \
-MAXIMUM TEXT/CHOICE INPUT: 180 characters\
+MAXIMUM MAIN TEXT/CHOICE INPUT: 175 characters\
 MAXIMUM OPTION INPUT: 190 characters\
 \
 =======================================\
 KEY\
 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
-\cf2 CHOICE\cf0 s will be denoted after the corresponding text. OPTIONs will be listed under the \cf3 CHOICE\cf0 , with \cf4 red OPTION\cf0  denoting a negative outcome and a \cf5 green OPTION\cf0  denoting a positive outcome. White OPTIONs are neutral choices and will progress the game and have no impact on the outcome. 
-\f1\b \cf4 GAME OVER 
-\f0\b0 \cf2 will appear next to \cf4 OPTION\cf2 s that result in a game over. \
+
+\f1\b \cf2 CHOICE\cf0 s
+\f0\b0  will be denoted after story-driven events. \
 \
+OPTIONs will be listed under the 
+\f1\b \cf3 CHOICE
+\f0\b0 \cf0 , with \cf4 red OPTION\cf0  denoting a negative outcome and a \cf5 green OPTION\cf0  denoting a positive outcome. White OPTIONs are neutral choices that will progress the game without an impact on future outcomes. \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6304\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b \cf4 GAME OVERs 
+\f0\b0 \cf2 will appear next to \cf4 OPTION\cf2 s that result in a game over. It will state 
+\f1\b \cf4 which node to loop back to.
+\f0\b0 \cf2 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf2 \
 \cf6 KEY ITEMS \cf3 will be available for use throughout the game.\cf2 \
 \
 //notes include in-line developer notes
@@ -37,9 +50,13 @@ CHARACTERS\
 \
 \
 MAIN CHARACTER: JOHN MCCLANE\
+\
 SECONDARY CHARACTERS (in order of appearance):\
-IMPOUND COP\
-HOLLY MCCLANE\
+\
+\ul IMPOUND COP\ulnone \
+\ul HOLLY MCCLANE\
+MILLER/COCHRANE\ulnone \
+LUGGAGE GUY\
 \
 =======================================\
 KEY ITEMS GUIDE\
@@ -61,14 +78,14 @@ You run out of the terminal doors towards the impound cop standing next to your 
 \f0\b0 \cf4 OPTION 1: \'93Hey! You better put my car down right now or else there will be hell to pay!\'94 //officer has negative opinion\
 \cf3 OPTION 2: \'93Wait, I\'92m here! You can put the car down!\'94\
 \
-As if expecting you, he responds just before you finish your sentence, \'93Yeah, yeah. Read the sign.\'94\
+As if expecting you, he responds just before you finish your sentence, \'93Yeah, yeah. Read the sign.\'94 The tow truck lifts the car higher, putting strain on the plastic bumper.\
 \
-The tow truck lifts the car higher, putting strain on the plastic bumper.\
+Maybe you have something on you that could convince him to listen\'85\
 \
 (Tutorial on how to use \cf6 KEY ITEMS\cf3 )\
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 \cf0 \
-Throughout the story, you may come across \cf6 KEY ITEMS \cf3 that may help you during your adventure. (How do we want to handle retrieving/using items? This will go into the tutorial instructions)\
+[TUTORIAL] Throughout the story, you may come across \cf6 KEY ITEMS \cf3 that may help you during your adventure. (How do we want to handle retrieving/using items? This will go into the tutorial instructions)\
 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
@@ -79,9 +96,7 @@ Throughout the story, you may come across \cf6 KEY ITEMS \cf3 that may help you 
 \
 \'93See? I\'92m a cop too. LAPD. C\'92mon, it\'92s Christmas.\'94\
 \
-\'93Sounds like you\'92re gonna be asking Santa for another car, Mr. LAPD.\'94\
-\
-The impound cop hands you a ticket and gives the okay for the truck driver to take off with your vehicle.\
+\'93Sounds like you\'92re gonna be asking Santa for another car, Mr. LAPD.\'94 The impound cop hands you a ticket and gives the okay for the truck driver to take off with your vehicle.\
 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
@@ -122,12 +137,16 @@ OPTION 2: Follow the suspicious men //skip ahead\
 \
 One of the officers turns around. It\'92s the cop from earlier that impounded your car!\
 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
-\f1\b \cf7 IF CHOICE 1 OPTION 1, DISPLAY:
+\f1\b \cf3 IF CHOICE 1 OPTION 1, DISPLAY:
 \f0\b0  \'93Oh, it\'92s the wise guy again? What did you see, Santa Claus bringing you a new car?\'94 He and the other officer chortled too loudly for them to hear anything else you would say.\cf4 \
-\cf3 ELSE DISPLAY: \'93Saw what?\'94\cf4  \
+
+\f1\b \cf3 ELSE, DISPLAY:
+\f0\b0  \'93Saw what?\'94\cf4  \
 \
-\cf3 \'93It\'92s nothing,\'94 you mumbled awkwardly before taking off.\cf4 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf3 \'93It\'92s nothing,\'94 you mumble before taking off.\cf4 \
 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 \cf0 =======================================\
@@ -142,10 +161,12 @@ You follow the men through the crowd until they pass through a door labeled \'93
 \f1\b \cf0 CHOICE 5: You see a worker near the door.\
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
-\f0\b0 \cf5 OPTION 1: Use item \cf6 BADGE\cf5  \cf7 // skip ahead to fight scene\
+\f0\b0 \cf5 OPTION 1: Use item \cf6 BADGE \cf3 // skip chance encounter\
 OPTION 2: \'93Hey you, open the door. Urgent police business\'94 // chance encounter\
 \
-\cf5 You show your \cf6 BADGE\cf5  to the worker as you command, \'93Open the door, and go get the police.\'94 The worker obliges and lets you in the restricted area. \cf3 // skip ahead to fight scene\
+
+\f1\b \cf5 IF OPTION 1, DISPLAY: 
+\f0\b0 \cf5 You show your \cf6 BADGE\cf5  to the worker as you command, \'93Open the door, and go get the police.\'94\cf3 \
 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 \cf0 =======================================\
@@ -157,8 +178,8 @@ OPTION 2: \'93Hey you, open the door. Urgent police business\'94 // chance encou
 \f3\b0 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
-\f0\i0 \cf3 // if we wanted to incorporate a \'93chance\'94 or \'93roll\'94 function, this would be a good place to do so. Example: If \cf8 random number is between 1-5\cf3 , 
-\f1\b \cf8 GAME OVER
+\f0\i0 \cf3 // if we wanted to incorporate a \'93chance\'94 or \'93roll\'94 function, this would be a good place to do so. Example: If \cf4 random number is between 1-5\cf3 , 
+\f1\b \cf4 GAME OVER
 \f0\b0 \cf3  and repeat negotiation. Else, \cf5 random number 6-10 can proceed\cf3 .\
 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
@@ -167,18 +188,53 @@ OPTION 2: \'93Hey you, open the door. Urgent police business\'94 // chance encou
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
 \f0\b0 \cf3 OPTION 1: [chance] Try to convince him to let you in\
-\cf8 OPTION 2: Find another way in // there is no other way in, terrorists get away\
+\cf4 OPTION 2: Find another way in // there is no other way in, terrorists get away\
 \
 
-\f1\b IF OPTION 2 \ul OR\ulnone  CHANCE 1-5, DISPLAY:
+\f1\b \cf5 IF [chance] between 6-10\cf3 , \cf5 DISPLAY\cf3 : 
+\f0\b0 \cf5 \'93Look pal, you let me in this door or we all die in a terrorist attack. Either way, you better call the police.\'94\cf4 \
+\
+
+\f1\b IF OPTION 2 \cf4 \ul \ulc4 OR\cf4 \ulnone  CHANCE 1-5, DISPLAY:
 \f0\b0  \'93Forget it, I don\'92t have time to argue with you\'94 you spit before looking for another way in. You run through the crowd to search for another entrance, but can\'92t find one. [Create scenario that results in] 
 \f1\b GAME OVER loop back to CHOICE 5\
 \
-\cf5 IF [chance] between 6-10 \cf5 \ul \ulc5 OR\cf5 \ulnone  CHOICE 5 OPTION 1\cf7 , \cf5 DISPLAY\cf7 :\cf8 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b0 \cf0 =======================================
+\f1\b \cf4 \
 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
+\f0\b0 \cf3 The worker nervously fumbles with his keys before opening the door to the dark, cluttered room, holding a web of conveyor belts within. You make your way through the machinery until you see two figures.\
+\
+\'93Excuse me, are you two gentlemen lost?\'94 you ask evenly, \cf6 BADGE\cf3  on display.\
+\
+\'93We uh\'85 work for the airline.\'94 
+\f3\i Convincing\'85 
+\f0\i0 you think to yourself. 
+\f3\i If these guys think that will work then they got another thing coming.
+\f0\i0  \'93Yeah? Well then, let\'92s see some ID\'92s \'97\'93 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 =======================================\
+//This is the first fight scene. Only the correct path and one game over are written. We can determine how many diverging paths we want to create based on actions after the intro scene is tested in the JS code\cf3 \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b \cf3 CHOICE 6: The two men jump aside and draw guns. They\'92re shooting!\cf4 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b0 \cf5 OPTION 1: Jump aside\cf3 \
+OPTION 2: Duck\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b \cf3 CHOICE 7: \cf4 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
 \f3\i\b0 \cf3 \
+\
 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
