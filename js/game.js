@@ -176,6 +176,26 @@ const textNodes = [
             },
         ]
     },
+    {
+        id: 12, // GAME OVER scenario
+        text: "You ignore the pager. The impound cop and the tow truck are gone. You decide to wait in the terminal for Holly. You hear loud bangs from the other side of the airport...",
+        options: [
+            {
+                text: "GAME OVER. Click to try again.",
+                nextText: 11
+            },
+        ]
+    },
+    {
+        id: 13, // choice 3, first diverging plot point
+        text: "You call the number from your pager. It’s Holly calling from the plane via airphone. She lets you know that she’ll land 30 minutes later than expected.",
+        options: [
+            {
+                text: "Next",
+                nextText: 14
+            },
+        ]
+    },
 ];
 
 startGame();
