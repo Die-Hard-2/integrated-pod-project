@@ -44,12 +44,20 @@ const textNodes = [
         text: "This should be the first text event",
         options: [
             {
-                text: "Option 1",
+                text: "Grab the medPack",
                 setState: { medPack: true },
                 nextText: 2
             },
             {
                 text: "Option 2",
+                nextText: 2
+            },
+            {
+                text: "Option 3",
+                nextText: 2
+            },
+            {
+                text: "Option 4",
                 nextText: 2
             }
         ]
@@ -59,12 +67,13 @@ const textNodes = [
         text: "This should be the second text event",
         options: [
             {
-                text: "Option 1",
-                nextText: 3
+                text: "This option should require a state of medPack: true to be True to show up",
+                nextText: 3,
+                requiredState: (currentState) => currentState.medPack
             },
             {
                 text: "Option 2",
-                nextText: 4
+                nextText: 3
             }
         ]
     },
