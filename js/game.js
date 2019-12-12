@@ -2,12 +2,12 @@
 const textElement = document.getElementById("text");
 const optionButtonsElement = document.getElementById("option-buttons");
 
-//Working on this not ready
+//Stores items owned and opinions of character for future events
 let state = {
     medPack: false,
 }
 
-//Starts game and immediately picks textNodes object with ID of 1
+//Starts game, sets default state, and immediately picks textNodes object with ID of 1
 function startGame() {
     state = { medPack: false };
     showTextNode(1);
@@ -37,7 +37,7 @@ function showTextNode(textNodeIndex) {
     });
 }
 
-//This will eventually show options based on State. Exe: Will show an option only if state { medkit: true }
+//This will show options based on State. Exe: Will show an option only if state { medkit: true }
 function showOption(option) {
     return option.requiredState == null || option.requiredState(state);
 }
@@ -45,7 +45,8 @@ function showOption(option) {
 //When the event listener hears a click it launches the next textNode
 function selectOption(option) {
     const nextTextNodeId = option.nextText;
-    state = Object.assign(state, option.setState);
+    state = Object.assign(state, option.setState); /* Object.assign(target, source) AKA this is updating the state with
+    the setState from the event */
     showTextNode(nextTextNodeId);
 }
 
