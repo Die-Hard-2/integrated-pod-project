@@ -1,6 +1,7 @@
 //Binds elements on HTML page to dynamic variables in game.js
 const textElement = document.getElementById("text");
 const optionButtonsElement = document.getElementById("option-buttons");
+const imgElement = document.getElementById("event-image");
 
 //Stores items owned and opinions of character for future events
 let state = {
@@ -21,6 +22,8 @@ function showTextNode(textNodeIndex) {
     //Finds the HTML element with ID of 'text' and fills it with the text for that event
     const textNode = textNodes.find(textNode => textNode.id === textNodeIndex);
     textElement.innerText = textNode.text;
+
+    imgElement.src = textNode.image;
 
     //Gets rid of old buttons from previous event
     while(optionButtonsElement.firstChild) {
@@ -58,6 +61,7 @@ const textNodes = [
     {
         id: 1,
         text: "This should be the first text event",
+        image: "img/dieharderbruce.jpg",
         options: [
             {
                 text: "Grab the [Med Pack]",
@@ -81,6 +85,7 @@ const textNodes = [
     {
         id: 2,
         text: "This should be the second text event",
+        image: "img/badguy.jpeg",
         options: [
             {
                 text: "This option should require a state of medPack: true to be True to show up",
