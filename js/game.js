@@ -19,10 +19,13 @@ function startGame() {
 
 //Building the current event on HTML
 function showTextNode(textNodeIndex) {
-    //Finds the HTML element with ID of 'text' and fills it with the text for that event
+    //Finds the textNode objects with the Id passed into this function as textNodeIndex
     const textNode = textNodes.find(textNode => textNode.id === textNodeIndex);
+
+    //Loads text for the event
     textElement.innerText = textNode.text;
 
+    //Loads image for the event.
     imgElement.src = textNode.image;
 
     //Gets rid of old buttons from previous event
@@ -51,8 +54,8 @@ function showOption(option) {
 //When the event listener hears a click it launches the next textNode
 function selectOption(option) {
     const nextTextNodeId = option.nextText;
-    state = Object.assign(state, option.setState); /* Object.assign(target, source) AKA this is updating the state with
-    the setState from the event */
+    // Object.assign(target, source) AKA this is updating the state with the setState from the event
+    state = Object.assign(state, option.setState);
     showTextNode(nextTextNodeId);
 }
 
@@ -101,6 +104,7 @@ const textNodes = [
     {
         id: 3,
         text: "You run out of the terminal doors towards the impound cop standing next to your mother-in-law’s new car, which is being hoisted up by a tow truck.",
+        image: "img/john-move-neutral.gif",
         options: [
             {
                 text: "Next",
