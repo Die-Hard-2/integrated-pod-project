@@ -49,6 +49,7 @@ img { /*edited to account for change in font size that affected img size; scales
     width: 80%;
     margin: .25em;
     border: 2px solid var(--gray);
+    border-radius: .4em;
 }
 
 .row {
