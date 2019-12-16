@@ -8,17 +8,23 @@
 \margl1440\margr1440\vieww13800\viewh17040\viewkind0
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
-\f0\fs24 \cf0 This is a draft for the recreation of the movie Die Hard 2: Die Harder as a text adventure game.\
-The game will be from the point of view of main character JOHN MCCLANE.\
-The \'93main path\'94 follows the movie script. Divulging scenarios were created by the developers for the purpose of this game.\
+\f0\fs24 \cf0 README.md\
 \
+This is the script for the recreation of the movie Die Hard 2: Die Harder as a text adventure game\
+The story will be told from the point of view of main character JOHN MCCLANE\
+The code was made using HTML5, CSS, JavaScript in IntelliJ IDE\
+The template for the JavaScript was obtained from __ and __ on Youtube\
+Sprites were made using piskel.com\
+The \'93main path\'94 that leads to the true ending follows the movie script. Divulging scenarios were created by the developers for the purpose of this game. \
 Reference screenplay obtained from http://www.dailyscript.com/scripts/Die_Hard_2.pdf\
+\
+\
+\
+=======================================\
+SCRIPT KEY\
 \
 MAXIMUM MAIN TEXT/CHOICE INPUT: 175 characters\
 MAXIMUM OPTION INPUT: 190 characters\
-\
-=======================================\
-KEY\
 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
@@ -37,7 +43,7 @@ OPTIONs will be listed under the
 \f0\b0 \cf2 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 \cf2 \
-\cf6 KEY ITEMS \cf3 will be available for use throughout the game.\cf2 \
+\cf6 ITEMS \cf3 will be available for use throughout the game.\cf2 \
 \
 //notes include in-line developer notes
 \f1\b \cf4 \
@@ -53,17 +59,18 @@ MAIN CHARACTER: JOHN MCCLANE\
 \
 SECONDARY CHARACTERS (in order of appearance):\
 \
-\ul IMPOUND COP\ulnone \
-\ul HOLLY MCCLANE\
-MILLER/COCHRANE\ulnone \
+IMPOUND COP\
+HOLLY MCCLANE\
+MILLER/COCHRANE\
 LUGGAGE GUY\
 \
 =======================================\
-KEY ITEMS GUIDE\
+ITEMS GUIDE\
 \
-BADGE\
-\
+BADGE	HAIRSPRAY\
+SKI\
 =======================================\
+\
 \
 INTRO: AIRPORT TERMINAL\
 \
@@ -82,10 +89,10 @@ As if expecting you, he responds just before you finish your sentence, \'93Yeah,
 \
 Maybe you have something on you that could convince him to listen\'85\
 \
-(Tutorial on how to use \cf6 KEY ITEMS\cf3 )\
+(Tutorial on how to use\cf6  ITEMS\cf3 )\
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 \cf0 \
-[TUTORIAL] Throughout the story, you may come across \cf6 KEY ITEMS \cf3 that may help you during your adventure. (How do we want to handle retrieving/using items? This will go into the tutorial instructions)\
+[TUTORIAL] Throughout the story, you may come across\cf6  ITEMS \cf3 that may help you during your adventure. (How do we want to handle retrieving/using items? This will go into the tutorial instructions)\
 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
@@ -192,7 +199,7 @@ OPTION 2: \'93Hey you, open the door. Urgent police business\'94 // chance encou
 \
 
 \f1\b \cf5 IF [chance] between 6-10\cf3 , \cf5 DISPLAY\cf3 : 
-\f0\b0 \cf5 \'93Look pal, you let me in this door or we all die in a terrorist attack. Either way, you better call the police.\'94\cf4 \
+\f0\b0 \cf5 \'93Look pal, you let me in this door or we all die in a terrorist attack. Either way you better call the police.\'94\cf4 \
 \
 
 \f1\b IF OPTION 2 \cf4 \ul \ulc4 OR\cf4 \ulnone  CHANCE 1-5, DISPLAY:
@@ -206,35 +213,118 @@ OPTION 2: \'93Hey you, open the door. Urgent police business\'94 // chance encou
 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
-\f0\b0 \cf3 The worker nervously fumbles with his keys before opening the door to the dark, cluttered room, holding a web of conveyor belts within. You make your way through the machinery until you see two figures.\
+\f0\b0 \cf3 The worker reluctantly opens the door to the dark, cluttered room, holding a web of conveyor belts within. You make your way through the machinery until you see two figures.\
 \
-\'93Excuse me, are you two gentlemen lost?\'94 you ask evenly, \cf6 BADGE\cf3  on display.\
+\'93Hey, this is a restricted area\'94 you shout, \cf6 BADGE\cf3  on display.\
 \
-\'93We uh\'85 work for the airline.\'94 
+\'93We work for the airline.\'94 
 \f3\i Convincing\'85 
-\f0\i0 you think to yourself. 
-\f3\i If these guys think that will work then they got another thing coming.
-\f0\i0  \'93Yeah? Well then, let\'92s see some ID\'92s \'97\'93 \
+\f0\i0 you think to yourself. \'93Yeah? Well then, let\'92s see some ID\'92s \'97\'93 \
 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 \cf0 =======================================\
-//This is the first fight scene. Only the correct path and one game over are written. We can determine how many diverging paths we want to create based on actions after the intro scene is tested in the JS code\cf3 \
+//This is the first fight scene. Only the correct path and one game over are written. We can determine diverging paths/GAME OVER scenarios after the intro scene is tested in the JS code\cf3 \
 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
-\f1\b \cf3 CHOICE 6: The two men jump aside and draw guns. They\'92re shooting!\cf4 \
+\f1\b \cf3 CHOICE 6: Suddenly, the two men jump aside and draw guns. They\'92re shooting!\cf4 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
 \f0\b0 \cf5 OPTION 1: Jump aside\cf3 \
 OPTION 2: Duck\
 \
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
-
-\f1\b \cf3 CHOICE 7: \cf4 \
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
-
-\f3\i\b0 \cf3 \
+\cf5 You jump out of the way onto a luggage conveyor belt that transports you above the men. As you aim your gun to shoot, they fire rounds in your direction. \
 \
+\cf3 As you\'92re firing your gun, a suitcase falls and knocks it out of your hands! You lose track of the men as they split up amid the chaos. \
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b \cf3 CHOICE 7: You frantically look for your gun as luggage passes on the conveyor belt. One of the men is approaching your hiding place.\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b0 \cf3 OPTION 1: Continue looking for your gun, you saw it fall nearby. //possibly alternate scenario? Chance scenario to find the gun or get caught?\
+\cf5 OPTION 2: Grab an item off the conveyor belt to use as a weapon\
+\
+You grab a \cf6 [SKI] \cf5 from the conveyor belt. You use it whack the gun out of his hand. You both land a few punches before toppling over onto another belt, causing a pile of suitcases to open.\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b \cf3 CHOICE 8: As you regain your footing, you see the man searching for his gun among the contents of the spilled suitcases.\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\b0 \cf3 OPTION 1: Stop him with force by attacking him from behind //Alternate scenario\
+\cf5 OPTION 2: Distract him with something from the suitcase\
+\
+The nearest item to you is a can of \cf6 [HAIRSPRAY]\cf5 . Just as he finds his gun and turns to aim at you, you blind him with a stream of spray\'85 that suddenly explodes? \
+\
+\cf3 His partner appears, shooting the can right out of your hand! Reflexively, you jump up to the belt above you to move out of the line of fire.\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f1\b \cf3 CHOICE 9: The partner starts heading up to your perch. Fortunately you have the high ground, but you better think carefully about your next move. 
+\f0\b0 \cf5 \
+OPTION 1: Surprise him by jumping down from above\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf3 OPTION 2: Distract him by throwing an item\
+\
+\cf5 After you jump down from above, you grab him by the collar and attempt to throw him off the ledge. But he reacts so quickly that he pulls you down with him onto another moving belt below!\
+\cf3 \
+Both of you have lost your guns. You find yourself in a power struggle on the belt that moves ever closer towards a small hatch that is not meant to fit a person, let alone two.\
+\
+The belt is now too high to jump down. You punch him enough to finally gain control. He is now pinned underneath you as you both approach the end, him headfirst.
+\f1\b \
+\
+CHOICE 10: You better make a move before you end up crushed, too. //both events lead to same resolution, the only difference is option 1 is canon
+\f0\b0 \
+\cf5 OPTION 1: Jump off the belt and grab onto the ledge \cf3 \
+OPTION 2: Jump down into a pile of luggage below\
+
+\f1\b \cf4 \
+
+\f0\b0 \cf3 //either CHOICE 10 option shows this text:
+\f3\i \
+\
+
+\f0\i0 His head starts getting crushed in the narrow hatch, splattering blood all over you. You wince, but there\'92s no time to react\'97 you jump off the belt and grab onto a nearby pipe. \
+\
+The machine smokes as the less lucky culprit twitches in the now jammed machine. But you\'92re not so lucky either...\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 =======================================\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf3 \
+\cf5 CHOICE 10, OPTION 1 ONLY: The pipe you grabbed onto bursts, letting out steam onto your hands that cause you to instantly let go. The wind gets knocked out of you as you slam into a pile of luggage below. //possibly have him grab a medpack or other item before falling if all other green conditions are satisfied?\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 =======================================\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf3 But there\'92s no time to catch your breath. You see the surviving member of the pair making a run for it!\
+\
+It seems almost hopeless until you look around and see\'85 
+\f3\i oh you\'92ve gotta be kidding me\'85\
+\
+
+\f0\i0 You hop onto a bike that was checked into luggage and ride after him. Just as you\'92re about to catch him, you hit a ledge that sends you flying into a bin full of bags! \
+\
+When you look up you see\'85\
+\
+\'93Freeze!\'94 The police holding a gun to your head.\
+\
+\'85and you turn behind you to watch the suspect run off.\
+\
+\'93Great job, asshole,\'94 you sigh. \'93I\'92m a cop and you let the bad guy get away!\'94\
+\
+//
+\f1\b END OF INTRO
+\f0\b0 \
+\
+\
+\
+\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f3\i \cf3 \
 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
