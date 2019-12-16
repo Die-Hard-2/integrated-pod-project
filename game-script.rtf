@@ -5,10 +5,12 @@
 \red35\green255\blue6;\red255\green255\blue11;}
 {\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\cssrgb\c0\c1\c1;\cssrgb\c100000\c12195\c0;
 \cssrgb\c0\c100000\c0;\cssrgb\c100000\c100000\c0;}
-\margl1440\margr1440\vieww13800\viewh17040\viewkind0
+\margl1440\margr1440\vieww14200\viewh17040\viewkind0
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
 \f0\fs24 \cf0 README.md\
+\
+GAME INFO \
 \
 This is the script for the recreation of the movie Die Hard 2: Die Harder as a text adventure game\
 The story will be told from the point of view of main character JOHN MCCLANE\
@@ -18,7 +20,16 @@ Sprites were made using piskel.com\
 The \'93main path\'94 that leads to the true ending follows the movie script. Divulging scenarios were created by the developers for the purpose of this game. \
 Reference screenplay obtained from http://www.dailyscript.com/scripts/Die_Hard_2.pdf\
 \
+=======================================\
+HOW TO PLAY\
 \
+DIE HARDER is a text adventure game that will adapt to your choices. There will be buttons with text that appear when it is time for you to make a choice. This will include actions or responses to other characters. Click on your response to proceed with the game. When there are no text options, select the NEXT to progress the story.\
+\
+Occasionally, a choice will influence another character\'92s opinion of you. Keep this in mind when choosing responses\'97 you may need a favor from someone later!\
+\
+You may also come across [ITEMS] in the game that you can store to use later. Some items may simply make the game easier by bypassing certain events, while other items are necessary to progress. Keep track of items and think out of the box when you\'92re in a tricky situation.\
+\
+Some choices will lead to a GAME OVER, which will take you back to a previous prompt.\
 \
 =======================================\
 SCRIPT KEY\
@@ -80,9 +91,9 @@ You run out of the terminal doors towards the impound cop standing next to your 
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
 \f1\b \cf0 CHOICE 1: You shout out to the impound cop\'85 //consequence: officer may react to conversation later\
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
 \f0\b0 \cf4 OPTION 1: \'93Hey! You better put my car down right now or else there will be hell to pay!\'94 //officer has negative opinion\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 \cf3 OPTION 2: \'93Wait, I\'92m here! You can put the car down!\'94\
 \
 As if expecting you, he responds just before you finish your sentence, \'93Yeah, yeah. Read the sign.\'94 The tow truck lifts the car higher, putting strain on the plastic bumper.\
@@ -108,7 +119,6 @@ Maybe you have something on you that could convince him to listen\'85\
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
 \f1\b \cf3 CHOICE 3: Before you have a chance to respond, your pager starts going off. \
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
 \f0\b0 \cf4 OPTION 1: Ignore it //it\'92s your wife, you never go to the bar or see the terrorist\cf3 \
 OPTION 2: Head to the nearest pay phone to call the number.\
@@ -116,6 +126,7 @@ OPTION 2: Head to the nearest pay phone to call the number.\
 \cf4 You ignore the pager. The impound cop and the tow truck are gone. You decide to wait in the terminal for Holly. You hear loud bangs from the other side of the airport. There were bombs. [Some scenario that leads to a game over we can discuss later] 
 \f1\b GAME OVER loop back to CHOICE 3\
 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
 \f0\b0 \cf3 You call the number from your pager. It\'92s Holly calling from the plane via airphone. She lets you know that she\'92ll land 30 minutes later than expected. \
 \
@@ -166,14 +177,14 @@ You follow the men through the crowd until they pass through a door labeled \'93
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
 \f1\b \cf0 CHOICE 5: You see a worker near the door.\
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
 \f0\b0 \cf5 OPTION 1: Use item \cf6 BADGE \cf3 // skip chance encounter\
 OPTION 2: \'93Hey you, open the door. Urgent police business\'94 // chance encounter\
 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
 \f1\b \cf5 IF OPTION 1, DISPLAY: 
-\f0\b0 \cf5 You show your \cf6 BADGE\cf5  to the worker as you command, \'93Open the door, and go get the police.\'94\cf3 \
+\f0\b0 You show your \cf6 BADGE\cf5  to the worker as you command, \'93Open the door, and go get the police.\'94\cf3 \
 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 \cf0 =======================================\
@@ -195,14 +206,17 @@ OPTION 2: \'93Hey you, open the door. Urgent police business\'94 // chance encou
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
 \f0\b0 \cf3 OPTION 1: [chance] Try to convince him to let you in\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 \cf4 OPTION 2: Find another way in // there is no other way in, terrorists get away\
 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
 \f1\b \cf5 IF [chance] between 6-10\cf3 , \cf5 DISPLAY\cf3 : 
 \f0\b0 \cf5 \'93Look pal, you let me in this door or we all die in a terrorist attack. Either way you better call the police.\'94\cf4 \
 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
-\f1\b IF OPTION 2 \cf4 \ul \ulc4 OR\cf4 \ulnone  CHANCE 1-5, DISPLAY:
+\f1\b \cf4 IF OPTION 2 \ul \ulc4 OR\ulnone  CHANCE 1-5, DISPLAY:
 \f0\b0  \'93Forget it, I don\'92t have time to argue with you\'94 you spit before looking for another way in. You run through the crowd to search for another entrance, but can\'92t find one. [Create scenario that results in] 
 \f1\b GAME OVER loop back to CHOICE 5\
 \
@@ -235,6 +249,7 @@ OPTION 2: Duck\
 \
 \cf5 You jump out of the way onto a luggage conveyor belt that transports you above the men. As you aim your gun to shoot, they fire rounds in your direction. \
 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 \cf3 As you\'92re firing your gun, a suitcase falls and knocks it out of your hands! You lose track of the men as they split up amid the chaos. \
 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
@@ -243,6 +258,7 @@ OPTION 2: Duck\
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
 \f0\b0 \cf3 OPTION 1: Continue looking for your gun, you saw it fall nearby. //possibly alternate scenario? Chance scenario to find the gun or get caught?\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 \cf5 OPTION 2: Grab an item off the conveyor belt to use as a weapon\
 \
 You grab a \cf6 [SKI] \cf5 from the conveyor belt. You use it whack the gun out of his hand. You both land a few punches before toppling over onto another belt, causing a pile of suitcases to open.\
@@ -253,10 +269,12 @@ You grab a \cf6 [SKI] \cf5 from the conveyor belt. You use it whack the gun out 
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
 \f0\b0 \cf3 OPTION 1: Stop him with force by attacking him from behind //Alternate scenario\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 \cf5 OPTION 2: Distract him with something from the suitcase\
 \
 The nearest item to you is a can of \cf6 [HAIRSPRAY]\cf5 . Just as he finds his gun and turns to aim at you, you blind him with a stream of spray\'85 that suddenly explodes? \
 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 \cf3 His partner appears, shooting the can right out of your hand! Reflexively, you jump up to the belt above you to move out of the line of fire.\
 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
@@ -267,7 +285,9 @@ OPTION 1: Surprise him by jumping down from above\
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 \cf3 OPTION 2: Distract him by throwing an item\
 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 \cf5 After you jump down from above, you grab him by the collar and attempt to throw him off the ledge. But he reacts so quickly that he pulls you down with him onto another moving belt below!\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 \cf3 \
 Both of you have lost your guns. You find yourself in a power struggle on the belt that moves ever closer towards a small hatch that is not meant to fit a person, let alone two.\
 \
@@ -276,10 +296,13 @@ The belt is now too high to jump down. You punch him enough to finally gain cont
 \
 CHOICE 10: You better make a move before you end up crushed, too. //both events lead to same resolution, the only difference is option 1 is canon
 \f0\b0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 \cf5 OPTION 1: Jump off the belt and grab onto the ledge \cf3 \
 OPTION 2: Jump down into a pile of luggage below\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
 \f1\b \cf4 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
 \f0\b0 \cf3 //either CHOICE 10 option shows this text:
 \f3\i \
@@ -293,6 +316,7 @@ The machine smokes as the less lucky culprit twitches in the now jammed machine.
 \cf0 =======================================\
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 \cf3 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 \cf5 CHOICE 10, OPTION 1 ONLY: The pipe you grabbed onto bursts, letting out steam onto your hands that cause you to instantly let go. The wind gets knocked out of you as you slam into a pile of luggage below. //possibly have him grab a medpack or other item before falling if all other green conditions are satisfied?\
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 \cf0 =======================================\
@@ -322,9 +346,8 @@ When you look up you see\'85\
 \
 \
 \
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
-\f3\i \cf3 \
+\f3\i \
 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
