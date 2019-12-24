@@ -1,0 +1,63 @@
+:root {
+    --red: #E33011;
+    --orange: #FC6D00;
+    --gray: #595C55;
+    --brown: #513A3A;
+    --burgundy: #7D2519;
+    --soft-white: #ECECEC;
+    --headerFont: 'Bebas Neue', sans-serif;
+    --font: 'Open Sans', sans-serif;
+}
+
+
+body {
+    box-sizing: border-box;
+    background: black;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--headerFont);
+    color: white;
+    font-size: 1.5rem;
+    text-shadow: 1px 1px var(--red) ;
+}
+
+.header {
+    font-family: var(--headerFont);
+    color: var(--red);
+    text-shadow: 1px 1px white;
+    font-size: 7rem;
+}
+
+img { /*edited to account for change in font size that affected img size; scales with breakpoints*/
+    height: 15rem;
+    width: 30rem;
+}
+
+#option-buttons{
+    background: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn{
+    background-color: var(--soft-white);
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    margin: .25em;
+    border: 2px solid var(--gray);
+    border-radius: .4em;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+.row-text {
+    height: 7em;
+    margin-top: 1.1em;
+}
