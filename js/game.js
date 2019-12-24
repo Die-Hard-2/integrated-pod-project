@@ -12,8 +12,9 @@ let state = {
 //Starts game, sets default state, and immediately picks textNodes object with ID of 1
 function startGame() {
     state = { medPack: false,
-              badge: false
-
+              badge: false,
+              politeCop: false,
+              rudeCop: false,
             };
     showTextNode(1);
 }
@@ -320,12 +321,12 @@ const textNodes = [
         text: 'You see a worker near the door.',
         options: [
             {
-                text: "Use item: [BADGE]",
+                text: "Convince him with your authority",
                 requiredState: (currentState) => currentState.badge,
                 nextText: 28
             },
             {
-                text: '“Hey you, open the door. Urgent police business”', //go to CHANCE encounter, need to create function for random roll
+                text: 'Tell the truth: "If you don\'t let me in right now we\'re all gonna be screwed."', //go to CHANCE encounter, need to create function for random roll
                 nextText: 23
             },
         ]
@@ -335,7 +336,7 @@ const textNodes = [
 
     {
         id: 23,
-        text: 'The worker\'s face twists in confusion. “Urgent police business? Yeah right, keep it moving.”',
+        text: 'The worker\'s face twists in confusion. “I\'m working in the airport at Christmas, man. I\'m already screwed. Keep it moving.”',
         options: [
             {
                 text: "[chance] Try to convince him to let you in",
@@ -379,14 +380,46 @@ const textNodes = [
     },
     {
         id: 27,
-        text: '“Forget it, I don’t have time to argue with you” you spit before looking for another way in. You run through the crowd to search for another entrance, but can’t find one.',
+        text: 'You decide to attempt one final appeal. “Look pal, you let me in this door or we all die in a terrorist attack. Either way you better call the police.”',
         options: [
             {
-                text: "GAME OVER. Click to try again.",
+                text: "Next",
                 nextText: 28
             },
         ]
     },
+    {
+        id: 28,
+        text: 'The worker reluctantly opens the door to the dark, cluttered room, holding a web of conveyor belts within. You make your way through the machinery until you see two figures.',
+        options: [
+            {
+                text: "Next",
+                nextText: 29
+            },
+        ]
+    },
+    {
+        id: 29,
+        text: '“Hey, this is a restricted area” you shout, [BADGE] on display.',
+        options: [
+            {
+                text: "Next",
+                nextText: 30
+            },
+        ]
+    },
+    {
+        id: 30,
+        text: '“We work for the airline,” one of the men replies, almost too quickly. “Yeah? Well then, let’s see some ID’s —“',
+        options: [
+            {
+                text: "Next",
+                nextText: 31
+            },
+        ]
+    },
+    //This is the first fight scene. Only the correct path and one game over are written. We can determine diverging paths/GAME OVER scenarios after the intro scene is tested in the JS code
+
 ];
 
 startGame();
