@@ -11,12 +11,6 @@ let state = {
 
 //Starts game, sets default state, and immediately picks textNodes object with ID of 1
 function startGame() {
-    state = {
-        medPack: false,
-        badge: false,
-        rudeCop: false,
-        politeCop: false,
-    };
     showTextNode(1);
 }
 
@@ -32,7 +26,6 @@ function showTextNode(textNodeIndex) {
     imgElement.src = textNode.image;
 
     //Gets rid of old buttons from previous event
-    while (optionButtonsElement.firstChild) {
         optionButtonsElement.removeChild(optionButtonsElement.firstChild);
     }
 
@@ -71,7 +64,6 @@ const textNodes = [
         options: [
             {
                 text: "Grab the [Med Pack]",
-                setState: {medPack: true},
                 nextText: 2
             },
             {
