@@ -1,50 +1,73 @@
+//Binds elements on HTML page to dynamic variables in game.js
 const textElement = document.getElementById("text");
 const optionButtonsElement = document.getElementById("option-buttons");
+const imgElement = document.getElementById("event-image");
 
+//Stores items owned and opinions of character for future events
 let state = {
+    medPack: false,
+    badge: false
+};
 
-
-}
-
+//Starts game, sets default state, and immediately picks textNodes object with ID of 1
 function startGame() {
-    state = { medPack: false };
+    state = { medPack: false,
+              badge: false
+            };
     showTextNode(1);
 }
 
+//Building the current event on HTML
 function showTextNode(textNodeIndex) {
+    //Finds the textNode objects with the Id passed into this function as textNodeIndex
     const textNode = textNodes.find(textNode => textNode.id === textNodeIndex);
+
+    //Loads text for the event
     textElement.innerText = textNode.text;
+
+    //Loads image for the event.
+    imgElement.src = textNode.image;
+
+    //Gets rid of old buttons from previous event
     while(optionButtonsElement.firstChild) {
         optionButtonsElement.removeChild(optionButtonsElement.firstChild);
     }
 
+    //Creates a new button for each option available in that event
     textNode.options.forEach(option => {
         if(showOption(option)) {
             const button = document.createElement('button');
             button.innerText = option.text;
             button.classList.add('btn');
+            //This is listening to clicks and will launch the selectOption function
             button.addEventListener('click', () => selectOption(option));
             optionButtonsElement.appendChild(button);
         }
     });
 }
 
+//This will show options based on State. Exe: Will show an option only if state { medkit: true }
 function showOption(option) {
-    return true;
+    return option.requiredState == null || option.requiredState(state);
 }
 
+//When the event listener hears a click it launches the next textNode
 function selectOption(option) {
     const nextTextNodeId = option.nextText;
+    // Object.assign(target, source) AKA this is updating the state with the setState from the event
+    state = Object.assign(state, option.setState);
     showTextNode(nextTextNodeId);
 }
 
+//Events stored as objects
 const textNodes = [
     {
         id: 1,
         text: "This should be the first text event",
+        image: "img/dieharderbruce.jpg",
         options: [
             {
-                text: "Grab the medPack",
+                text: "Grab the [Med Pack]",
                 setState: { medPack: true },
                 nextText: 2
             },
@@ -65,6 +88,7 @@ const textNodes = [
     {
         id: 2,
         text: "This should be the second text event",
+        image: "img/badguy.jpeg",
         options: [
             {
                 text: "This option should require a state of medPack: true to be True to show up",
@@ -80,6 +104,7 @@ const textNodes = [
     {
         id: 3,
         text: "You run out of the terminal doors towards the impound cop standing next to your mother-in-law’s new car, which is being hoisted up by a tow truck.",
+        image: "img/john-move-neutral.gif",
         options: [
             {
                 text: "Next",
