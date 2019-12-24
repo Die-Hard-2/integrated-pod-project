@@ -13,6 +13,7 @@ let state = {
 function startGame() {
     state = { medPack: false,
               badge: false
+
             };
     showTextNode(1);
 }
@@ -114,14 +115,17 @@ const textNodes = [
     },
     {
         id: 4, //choice 1, has impact after choice 4 option 1
+        //Currently attempting to set state so that the "Next" option that appears in id: 17 is linked to the setState of the selection in id: 4. Currently both "Next" options are still appearing in id: 17
         text: "You shout out to the impound cop…",
         options: [
             {
-                text: '“Hey! You better put my car down right now or else there will be                         hell to pay!”', //officer has negative opinion,
+                text: '“Hey! You better put my car down right now or else there will be hell to pay!”',
+                setState: {rudeCop: true},
                 nextText: 5
             },
             {
                 text: '“Wait, I’m here! You can put the car down!”',
+                setState: {politeCop: true},
                 nextText: 5
             }
         ]
@@ -218,6 +222,168 @@ const textNodes = [
             {
                 text: "Next",
                 nextText: 14
+            },
+        ]
+    },
+    {
+        id: 14,
+        text: "You decide to head over to the bar to await Holly’s arrival.",
+        options: [
+            {
+                text: "Next",
+                nextText: 15
+            },
+        ]
+    },
+    {
+        id: 15, // choice 4
+        text: "While sitting at the bar, you witness two men behaving strangely. They synchronize watches before picking up a wrapped package. One might’ve had a holster inside his jacket.",
+        options: [
+            {
+                text: "Alert the police", //will be affected by how the impound cop was addressed earlier
+                nextText: 16
+            },
+            {
+                text: "Follow the suspicious men",
+                nextText: 21
+            },
+        ]
+    },
+    {
+        id: 16, // choice 4, option 1 divergence
+        text: "You approach the nearest officers to report what you had witnessed. “Excuse me officers, I think I just saw —“",
+        options: [
+            {
+                text: "Next",
+                nextText: 17
+            },
+        ]
+    },
+    {
+        id: 17,
+        text: "One of the officers turns around. It’s the cop from earlier that impounded your car!",
+        options: [ //current states not working, need to debug
+            {
+                text: "Next",
+                requiredState: (currentState) => currentState.rudeCop,
+                nextText: 18
+            },
+            {
+                text: "Next",
+                requiredState: (currentState) => currentState.politeCop,
+                nextText: 19
+            },
+        ]
+    },
+    {
+        id: 18,
+        text: '"Oh, it’s the wise guy again. What did you see, Santa Claus bringing you a new car?” He and the other officer chortled too loudly for them to hear anything else you would say.',
+        options: [
+            {
+                text: "Next",
+                nextText: 20
+            },
+        ]
+    },
+    {
+        id: 19,
+        text: '“Saw what?” The bored cop seems to have already forgotten about your earlier encounter...',
+        options: [
+            {
+                text: "Next",
+                nextText: 20
+            },
+        ]
+    },
+    {
+        id: 20,
+        text: '“It’s nothing,” you mumble before taking off.',
+        options: [
+            {
+                text: "Next",
+                nextText: 21
+            },
+        ]
+    },
+    {
+        id: 21,
+        text: 'You follow the men through the crowd until they pass through a door labeled “NO ADMITTANCE” in the luggage area. The door is now locked.',
+        options: [
+            {
+                text: "Next",
+                nextText: 22
+            },
+        ]
+    },
+    {
+        id: 22,
+        text: 'You see a worker near the door.',
+        options: [
+            {
+                text: "Use item: [BADGE]",
+                requiredState: (currentState) => currentState.badge,
+                nextText: 28
+            },
+            {
+                text: '“Hey you, open the door. Urgent police business”', //go to CHANCE encounter, need to create function for random roll
+                nextText: 23
+            },
+        ]
+    },
+
+// COMMENTED OUT 23-25 CHANCE ENCOUNTER UNTIL RANDOM ROLL FUNCTION IS MADE
+
+    {
+        id: 23,
+        text: 'The worker\'s face twists in confusion. “Urgent police business? Yeah right, keep it moving.”',
+        options: [
+            {
+                text: "[chance] Try to convince him to let you in",
+                nextText: 24
+            },
+            {
+                text: 'Find another way in', // there is no other way in, terrorists get away,
+                nextText: 26
+            },
+        ]
+    },
+    {
+        id: 24,
+        text: '[TUTORIAL] Occasionally you will be faced with chance encounters when there was a previous selection that could have lead to a better outcome. The game will auto-roll to decide your fate...',
+        options: [
+            {
+                text: "Next", //go to CHANCE encounter
+                nextText: 25
+            },
+        ]
+    },
+    {
+        id: 25,
+        text: 'YOU ROLLED: ' + " (make function for rollResult)", // need to make function for random roll 1-10; if 1-5 GAME OVER id: 26, else proceed to id: 27. For now will code as if 6-10 was rolled.
+        options: [
+            {
+                text: "Next", //go to CHANCE encounter, need to create function for random roll
+                nextText: 27
+            },
+        ]
+    },
+    {
+        id: 26,
+        text: '“Forget it, I don’t have time to argue with you” you spit before looking for another way in. You run through the crowd to search for another entrance, but can’t find one.',
+        options: [
+            {
+                text: "GAME OVER. Click to try again.",
+                nextText: 21
+            },
+        ]
+    },
+    {
+        id: 27,
+        text: '“Forget it, I don’t have time to argue with you” you spit before looking for another way in. You run through the crowd to search for another entrance, but can’t find one.',
+        options: [
+            {
+                text: "GAME OVER. Click to try again.",
+                nextText: 28
             },
         ]
     },
