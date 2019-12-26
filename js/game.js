@@ -15,6 +15,10 @@ function startGame() {
               badge: false,
               politeCop: false,
               rudeCop: false,
+              ski : false,
+              hairspray: false,
+              lighter: false,
+              nailFile : false,
             };
     showTextNode(1);
 }
@@ -419,7 +423,226 @@ const textNodes = [
         ]
     },
     //This is the first fight scene. Only the correct path and one game over are written. We can determine diverging paths/GAME OVER scenarios after the intro scene is tested in the JS code
-
+    {
+        id: 31,
+        text: 'Suddenly, the two men jump aside and draw guns. They’re shooting!',
+        options: [
+            {
+                text: "Jump out of the way onto the conveyor belt",
+                nextText: 32
+            },
+            // {
+            //     text: "Take cover behind the conveyor belt",
+            //     nextText: 31
+            // },
+        ]
+    },
+    {
+        id: 32,
+        text: 'You jump out of the way onto a luggage conveyor belt that transports you above the men. As you aim your gun to shoot, they fire rounds in your direction.',
+        options: [
+            {
+                text: "Next",
+                nextText: 33
+            },
+        ]
+    },
+    {
+        id: 33,
+        text: 'As you’re firing your gun, a suitcase falls and knocks it out of your hands! You lose track of the men as they split up amid the chaos. ',
+        options: [
+            {
+                text: "Next",
+                nextText: 34
+            },
+        ]
+    },
+    {
+        id: 33,
+        text: 'As you’re firing your gun, a suitcase falls and knocks it out of your hands! You lose track of the men as they split up amid the chaos.',
+        options: [
+            {
+                text: "Next",
+                nextText: 34
+            },
+        ]
+    },
+    {
+        id: 34,
+        text: 'You frantically look for your gun as luggage passes on the conveyor belt. One of the men is approaching your hiding place.',
+        options: [
+            // {
+            //     text: "Continue looking for your gun, you saw it fall nearby.", //Chance scenario to find the gun or get caught
+            //     nextText: 3
+            // },
+            {
+                text: "Grab an item off the conveyor belt to use as a weapon",
+                setState: { ski : true},
+                nextText: 35
+            },
+        ]
+    },
+    {
+        id: 35,
+        text: 'You grab a [SKI] from the conveyor belt. You use it whack the gun out of his hand. You both land a few punches before toppling over onto another belt, causing a pile of suitcases to open.',
+        options: [
+            {
+                text: "Next",
+                nextText: 36
+            },
+        ]
+    },
+    {
+        id: 36,
+        text: 'As you regain your footing, you see the man searching for his gun among the contents of the spilled suitcases.',
+        options: [
+            // {
+            //     text: "Stop him with force by attacking him from behind",
+            //     nextText: 3
+            // },
+            {
+                text: "Distract him with something from the suitcase",
+                setState: { hairspray : true},
+                nextText: 37
+            },
+        ]
+    },
+    {
+        id: 37,
+        text: 'The nearest item to you is a can of [HAIRSPRAY]. Just as he finds his gun and turns to aim at you, you blind him with a stream of spray… that suddenly explodes?',
+        options: [
+            {
+                text: "Next",
+                nextText: 38
+            },
+        ]
+    },
+    {
+        id: 38,
+        text: 'His partner appears, shooting the can right out of your hand! Reflexively, you jump up to the belt above you to move out of the line of fire.',
+        options: [
+            {
+                text: "Next",
+                nextText: 39
+            },
+        ]
+    },
+    {
+        id: 39,
+        text: 'The partner starts heading up to your perch. Fortunately you have the high ground, but you better think carefully about your next move.',
+        options: [
+            {
+                text: "Surprise him by jumping down from above",
+                nextText: 40
+            },
+            // {
+            //     text: "Distract him by throwing an item", //select item from inventory to throw?
+            //     nextText: 40
+            // },
+        ]
+    },
+    {
+        id: 40,
+        text: 'After you jump down from above, you grab him by the collar and attempt to throw him off the ledge. But he reacts so quickly that he pulls you down with him onto another moving belt below!',
+        options: [
+            {
+                text: "Next",
+                nextText: 41
+            },
+        ]
+    },
+    {
+        id: 40,
+        text: 'Both of you have lost your guns. You find yourself in a power struggle on the belt that moves ever closer towards a small hatch that is not meant to fit a person, let alone two.',
+        options: [
+            {
+                text: "Next",
+                nextText: 41
+            },
+        ]
+    },
+    {
+        id: 41,
+        text: 'The belt is now too high to jump down. You punch him enough to finally gain control. He is now pinned underneath you as you both approach the end, him headfirst.',
+        options: [
+            {
+                text: "Next",
+                nextText: 42
+            },
+        ]
+    },
+    {
+        id: 42,
+        text: 'You better make a move before you end up crushed, too.', //both events lead to same resolution, the only difference is option 1 is canon
+        options: [
+            {
+                text: "Jump off the belt and grab onto the ledge",
+                setState: { lighter: true },
+                nextText: 43
+            },
+            {
+                text: "Jump down into a pile of luggage below",
+                setState: { nailFile: true },
+                nextText: 43
+            },
+        ]
+    },
+    {
+        id: 43,
+        text: 'His head starts getting crushed in the narrow hatch, splattering blood all over you. The machine smokes as the less lucky culprit twitches in the now jammed machine.',
+        options: [
+            {
+                text: "Next",
+                requiredState: (currentState) => currentState.nailFile,
+                nextText: 4
+            },
+            {
+                text: "Next",
+                requiredState: (currentState) => currentState.lighter,
+                nextText: 44
+            },
+        ]
+    },
+    {
+        id: 44,
+        text: 'You wince, but there’s no time to react— you jump off the belt and grab onto a nearby pipe.',
+        options: [
+            {
+                text: "Next",
+                nextText: 45
+            },
+        ]
+    },
+    {
+        id: 45,
+        text: 'The pipe you grabbed onto bursts, letting out steam onto your hands that cause you to instantly let go. The wind gets knocked out of you as you slam into a pile of luggage below.',
+        options: [
+            {
+                text: "Next",
+                nextText: 46
+            },
+        ]
+    },
+    {
+        id: 45,
+        text: 'The pipe you grabbed onto bursts, letting out steam onto your hands that cause you to instantly let go. The wind gets knocked out of you as you slam into a pile of luggage below.',
+        options: [
+            {
+                text: "Next",
+                nextText: 46
+            },
+        ]
+    },
+    {
+        id: 46,
+        text: 'The wind gets knocked out of you as you slam into the hard suitcases. Something jabbed you especially hard— a [LIGHTER]? It could be useful later…',
+        options: [
+            {
+                text: "Next",
+                nextText: 47
+            },
+        ]
+    },
 ];
 
 startGame();
