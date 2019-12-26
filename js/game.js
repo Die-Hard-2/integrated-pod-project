@@ -17,8 +17,8 @@ function startGame() {
               rudeCop: false,
               ski : false,
               hairspray: false,
-              firstAid: false,
-              switchBlade : false,
+              lighter: false,
+              nailFile : false,
             };
     showTextNode(1);
 }
@@ -577,12 +577,12 @@ const textNodes = [
         options: [
             {
                 text: "Jump off the belt and grab onto the ledge",
-                setState: { firstAid: true },
+                setState: { lighter: true },
                 nextText: 43
             },
             {
                 text: "Jump down into a pile of luggage below",
-                setState: { switchBlade : true },
+                setState: { nailFile: true },
                 nextText: 43
             },
         ]
@@ -593,12 +593,12 @@ const textNodes = [
         options: [
             {
                 text: "Next",
-                requiredState: (currentState) => currentState.switchBlade,
+                requiredState: (currentState) => currentState.nailFile,
                 nextText: 4
             },
             {
                 text: "Next",
-                requiredState: (currentState) => currentState.firstAid,
+                requiredState: (currentState) => currentState.lighter,
                 nextText: 44
             },
         ]
@@ -610,6 +610,36 @@ const textNodes = [
             {
                 text: "Next",
                 nextText: 45
+            },
+        ]
+    },
+    {
+        id: 45,
+        text: 'The pipe you grabbed onto bursts, letting out steam onto your hands that cause you to instantly let go. The wind gets knocked out of you as you slam into a pile of luggage below.',
+        options: [
+            {
+                text: "Next",
+                nextText: 46
+            },
+        ]
+    },
+    {
+        id: 45,
+        text: 'The pipe you grabbed onto bursts, letting out steam onto your hands that cause you to instantly let go. The wind gets knocked out of you as you slam into a pile of luggage below.',
+        options: [
+            {
+                text: "Next",
+                nextText: 46
+            },
+        ]
+    },
+    {
+        id: 46,
+        text: 'The wind gets knocked out of you as you slam into the hard suitcases. Something jabbed you especially hard— a [LIGHTER]? It could be useful later…',
+        options: [
+            {
+                text: "Next",
+                nextText: 47
             },
         ]
     },
