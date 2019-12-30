@@ -325,7 +325,7 @@ const textNodes = [
         text: 'You see a worker near the door.',
         options: [
             {
-                text: "Convince him with your authority",
+                text: "Convince him with your authority and show him your [BADGE]",
                 requiredState: (currentState) => currentState.badge,
                 nextText: 28
             },
@@ -594,7 +594,7 @@ const textNodes = [
             {
                 text: "Next",
                 requiredState: (currentState) => currentState.nailFile,
-                nextText: 4
+                nextText: 47
             },
             {
                 text: "Next",
@@ -639,7 +639,77 @@ const textNodes = [
         options: [
             {
                 text: "Next",
-                nextText: 47
+                nextText: 49
+            },
+        ]
+    },
+    {
+        id: 47,
+        text: 'You wince, but there’s no time to react— you jump off the belt and into a pile of luggage below.',
+        options: [
+            {
+                text: "Next",
+                nextText: 48
+            },
+        ]
+    },
+    {
+        id: 48,
+        text: 'The wind gets knocked out of you as you slam into the hard suitcases. Something jabbed you especially hard— the blunt end of a [METAL NAIL FILE]? It could be useful later… ',
+        options: [
+            {
+                text: "Next",
+                nextText: 49
+            },
+        ]
+    },
+    {
+        id: 49,
+        text: 'You look up to see the surviving member of the pair making a run for it! It seems almost hopeless until you look around and see… oh you’ve gotta be kidding me…',
+        options: [
+            {
+                text: "Next",
+                nextText: 50
+            },
+        ]
+    },
+    {
+        id: 50,
+        text: 'You hop onto a bike that was checked into luggage and ride after him. Just as you’re about to catch him, you hit a ledge that sends you flying into a bin full of bags!',
+        options: [
+            {
+                text: "Next",
+                nextText: 51
+            },
+        ]
+    },
+    {
+        id: 51,
+        text: 'When you look up you see…',
+        options: [
+            {
+                text: "Next",
+                nextText: 52
+            },
+        ]
+    },
+    {
+        id: 52,
+        text: '“Freeze!” The police holding a gun to your head… and the suspect escaping.',
+        options: [
+            {
+                text: "Next",
+                nextText: 53
+            },
+        ]
+    },
+    {
+        id: 53,
+        text: '“Great job, asshole,” you sigh. “I’m a cop and you let the bad guy get away!”',
+        options: [
+            {
+                text: "Next",
+                nextText: 54
             },
         ]
     },
