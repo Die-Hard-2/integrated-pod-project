@@ -65,6 +65,16 @@ function selectOption(option) {
     showTextNode(nextTextNodeId);
 }
 
+//random number generator for chance encounter
+var randomNumber = Math.floor(Math.random() * 10) + 1;
+function rollResult() {
+    if (randomNumber <= 5) {
+        return 26
+    } else {
+        return 27
+    }
+}
+
 //Events stored as objects
 const textNodes = [
     {
@@ -364,11 +374,11 @@ const textNodes = [
     },
     {
         id: 25,
-        text: 'YOU ROLLED: ' + " (make function for rollResult)", // need to make function for random roll 1-10; if 1-5 GAME OVER id: 26, else proceed to id: 27. For now will code as if 6-10 was rolled.
+        text: 'YOU ROLLED: ' + randomNumber, // need to make function for random roll 1-10; if 1-5 GAME OVER nextText: 26, else nextText: 27. For now will code as if 6-10 was rolled.
         options: [
             {
                 text: "Next", //go to CHANCE encounter, need to create function for random roll
-                nextText: 27
+                nextText: rollResult()
             },
         ]
     },
