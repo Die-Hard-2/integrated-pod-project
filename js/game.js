@@ -724,11 +724,10 @@ const textNodes = [
     },
     {
         id: 53,
-        text: '“Great job, asshole,” you sigh. “I’m a cop and you let the bad guy get away!”',
+        text: '“Great job, asshole,” you sigh. “I’m a cop... you let the bad guy get away!”',
         options: [
             {
-                text: "Next",
-                nextText: 54
+                text: "Thanks for playing our demo!",
             },
         ]
     },
