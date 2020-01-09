@@ -725,6 +725,7 @@ const textNodes = [
     {
         id: 53,
         text: '“Great job, asshole,” you sigh. “I’m a cop... you let the bad guy get away!”',
+        image: ("img/tbc.jpg"),
         options: [
             {
                 text: "Thanks for playing our demo!",
