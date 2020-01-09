@@ -1,3 +1,7 @@
+(function(){
+"use strict";
+$(document).ready(function(){
+
 //Binds elements on HTML page to dynamic variables in game.js
 const textElement = document.getElementById("text");
 const optionButtonsElement = document.getElementById("option-buttons");
@@ -735,3 +739,6 @@ const textNodes = [
 ];
 
 startGame();
+
+});
+})();
