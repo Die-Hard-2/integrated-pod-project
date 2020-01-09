@@ -65,6 +65,16 @@ function selectOption(option) {
     showTextNode(nextTextNodeId);
 }
 
+//random number generator for chance encounter
+var randomNumber = Math.floor(Math.random() * 6) + 1;
+function rollResult() {
+    if (randomNumber <= 3) {
+        return 26
+    } else {
+        return 27
+    }
+}
+
 //Events stored as objects
 const textNodes = [
     {
@@ -122,6 +132,7 @@ const textNodes = [
         id: 4, //choice 1, has impact after choice 4 option 1
         //Currently attempting to set state so that the "Next" option that appears in id: 17 is linked to the setState of the selection in id: 4. Currently both "Next" options are still appearing in id: 17
         text: "You shout out to the impound cop…",
+        image: "img/john-angry.gif",
         options: [
             {
                 text: '“Hey! You better put my car down right now or else there will be hell to pay!”',
@@ -138,6 +149,7 @@ const textNodes = [
     {
         id: 5,
         text: "As if expecting you, he responds just before you finish your sentence, “Yeah, yeah. Read the sign.” The tow truck lifts the car higher, putting strain on the plastic bumper.",
+        image: "img/tow-truck-scene.gif",
         options: [
             {
                 text: "Next",
@@ -148,6 +160,7 @@ const textNodes = [
     {
         id: 6,
         text: "Maybe you have something on you that could convince him to listen…",
+        image: "img/john-thinking.png",
         options: [
             {
                 text: "Next",
@@ -158,6 +171,7 @@ const textNodes = [
     {
         id: 7,
         text: "[TUTORIAL] Throughout the story, you may come across KEY ITEMS that may help you during your adventure.",
+        image: "img/dieharderbruce.jpg",
         options: [
             {
                 text: "Next",
@@ -168,6 +182,7 @@ const textNodes = [
     {
         id: 8, // choice 2
         text: '“Hey, hey, wait!”',
+        image: "img/john-surprised.png",
         options: [
             {
                 text: "Pull out your [BADGE] to show to the officer", //only one choice for tutorial purposes
@@ -179,6 +194,7 @@ const textNodes = [
     {
         id: 9,
         text: '“See? I’m a cop too. LAPD. C’mon, it’s Christmas.”',
+        image: "img/badge.png",
         options: [
             {
                 text: "Next",
@@ -189,6 +205,7 @@ const textNodes = [
     {
         id: 10,
         text: '““Sounds like you’re gonna be asking Santa for another car, Mr. LAPD.” The impound cop hands you a ticket and gives the okay for the truck driver to take off with your vehicle.',
+        image: "img/john-angry.gif",
         options: [
             {
                 text: "Next",
@@ -199,6 +216,7 @@ const textNodes = [
     {
         id: 11, // choice 3, first diverging plot point
         text: "Before you have a chance to respond, your pager starts going off.",
+        image: "img/pager.jpeg",
         options: [
             {
                 text: "Ignore it",
@@ -213,6 +231,7 @@ const textNodes = [
     {
         id: 12, // GAME OVER scenario
         text: "You ignore the pager. The impound cop and the tow truck are gone. You decide to wait in the terminal for Holly. You hear loud bangs from the other side of the airport...",
+        image: "img/game-over.jpeg",
         options: [
             {
                 text: "GAME OVER. Click to try again.",
@@ -335,9 +354,6 @@ const textNodes = [
             },
         ]
     },
-
-// COMMENTED OUT 23-25 CHANCE ENCOUNTER UNTIL RANDOM ROLL FUNCTION IS MADE
-
     {
         id: 23,
         text: 'The worker\'s face twists in confusion. “I\'m working in the airport at Christmas, man. I\'m already screwed. Keep it moving.”',
@@ -355,6 +371,7 @@ const textNodes = [
     {
         id: 24,
         text: '[TUTORIAL] Occasionally you will be faced with chance encounters when there was a previous selection that could have lead to a better outcome. The game will auto-roll to decide your fate...',
+        image: "img/dice.gif",
         options: [
             {
                 text: "Next", //go to CHANCE encounter
@@ -364,17 +381,19 @@ const textNodes = [
     },
     {
         id: 25,
-        text: 'YOU ROLLED: ' + " (make function for rollResult)", // need to make function for random roll 1-10; if 1-5 GAME OVER id: 26, else proceed to id: 27. For now will code as if 6-10 was rolled.
+        text: 'YOU ROLLED: ' + randomNumber, // variable from function for random roll 1-10; if 1-5 GAME OVER nextText: 26, else nextText: 27.
+        image: "img/" + randomNumber + ".png",
         options: [
             {
-                text: "Next", //go to CHANCE encounter, need to create function for random roll
-                nextText: 27
+                text: "Next",
+                nextText: rollResult() //function determines number of next text node
             },
         ]
     },
     {
         id: 26,
-        text: '“Forget it, I don’t have time to argue with you” you spit before looking for another way in. You run through the crowd to search for another entrance, but can’t find one.',
+        text: '“Forget it, I don’t have time to argue with you.” You run through the crowd to search for another entrance, but can’t find one. As you come to this realization, you hear a building-shattering bang...',
+        image: "img/game-over.jpeg",
         options: [
             {
                 text: "GAME OVER. Click to try again.",
